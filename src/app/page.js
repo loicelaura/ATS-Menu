@@ -1,10 +1,9 @@
-
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
-import DashboardStats from '../components/DashboardStats';
-import OrderList from '../components/OrderList';
-import { Grid, Typography } from '@mui/material/Grid'; 
-
+import Grid from '@mui/material/Grid';
+import Sidebar from './components/Sidebar.jsx';
+import Header from './components/Header.jsx';
+import DashboardStats from './components/DashboardStats.jsx';
+import OrderList from './components/OrderList.jsx';
+import Typography from '@mui/material/Typography'; 
 export default function Home() {
   const stats = [
     { value: '$96,321', label: 'Total Revenue' },
@@ -40,8 +39,6 @@ export default function Home() {
           {/* Dashboard Components */}
           <DashboardStats stats={stats} />
           <OrderList orders={orders} />
-          <PopularDishes dishes={popularDishes} />
-          <Reservations reservations={reservations} />
         </Grid>
       </Grid>
     </div>
