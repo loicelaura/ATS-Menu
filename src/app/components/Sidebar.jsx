@@ -17,47 +17,47 @@ const Sidebar = () => {
 
       {/* List of Menu Items */}
       <List style={{ flexGrow: 1 }}>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><DashboardIcon /></ListItemIcon>
           <ListItemText primary="Dashboard" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Orders" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Menu" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Tables" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Delivery" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Reservations" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Accounting" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Customers" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Staff" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Reports" />
         </ListItem>
-        <ListItem button>
+        <ListItem button="true">
           <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           <ListItemText primary="Settings" />
         </ListItem>
