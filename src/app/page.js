@@ -1,13 +1,11 @@
 import Sidebar from './components/Sidebar.jsx';
 import Header from './components/Header.jsx';
-import DashboardStats from './components/DashboardStats.jsx';
 import Typography from '@mui/material/Typography';
-import PopularDishes from './components/PopularDishes.jsx';
-import OrderManagement from './components/OrderManagement.jsx';
 import TodaysReservations from './components/TodaysReservations.jsx';
 import OutOfStock from './components/OutOfStock.jsx';
-import LeastOrderedItems from './components/LeastOrderedItems.jsx';
 import OrderChart from './components/OrderChart.jsx';
+import OrderManagement from './components/OrderManagement.jsx';
+import PopularDishes from './components/PopularDishes.jsx';
 
 export default function Home() {
   const stats = [
@@ -17,13 +15,19 @@ export default function Home() {
     { value: '321', label: 'Total Orders' },
   ];
 
+  const leastOrderedData = [
+    { name: 'Hot & Spicy cheesey', price: 20, orders: 89, image: '/pizza.jpg' },
+    { name: 'Sweet cheesy pizza for kids', price: 20, orders: 89, image: '/pizza.jpg' },
+    { name: 'Sweet cheesy pizza for kids', price: 20, orders: 89, image: '/pizza.jpg' },
+  ];
+
   const orders = [
     { name: 'Sweet cheesy pizza for kids', pending: 9, cancelled: 12, delivered: 369 },
     { name: 'Sweet cheesy pizza for kids', pending: 9, cancelled: 12, delivered: 369 },
     { name: 'Sweet cheesy pizza for kids', pending: 9, cancelled: 12, delivered: 369 },
   ];
 
-  const popularDishes = [
+  const popularDishesData = [
     { name: 'Sweet cheesy pizza for kids', orders: 29 },
     { name: 'Sweet cheesy pizza for kids', orders: 29 },
     { name: 'Sweet cheesy pizza for kids', orders: 29 },
@@ -54,12 +58,15 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="grid grid-cols-3 gap-4"> 
-            <div className="col-span-2">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="col-span-2 space-y-4">
               <OrderManagement orders={orders} />
-              <LeastOrderedItems />
+              <div className="bg-white rounded-lg shadow p-4">
+                <OrderChart />
+              </div>
+              <PopularDishes dishes={popularDishesData} />
             </div>
-            <div className="col-span-1">
+            <div className="col-span-1 space-y-4">
               <TodaysReservations />
               <OutOfStock />
             </div>
