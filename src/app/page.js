@@ -1,9 +1,10 @@
-import Grid from '@mui/material/Grid';
 import Sidebar from './components/Sidebar.jsx';
 import Header from './components/Header.jsx';
 import DashboardStats from './components/DashboardStats.jsx';
-import OrderList from './components/OrderList.jsx';
-import Typography from '@mui/material/Typography'; 
+import Typography from '@mui/material/Typography';
+import PopularDishes from './components/PopularDishes.jsx';
+import OrderManagement from './components/OrderManagement.jsx';
+
 export default function Home() {
   const stats = [
     { value: '$96,321', label: 'Total Revenue' },
@@ -14,21 +15,24 @@ export default function Home() {
 
   const orders = [
     { name: 'Sweet cheesy pizza for kids', pending: 9, cancelled: 12, delivered: 369 },
+    { name: 'Sweet cheesy pizza for kids', pending: 9, cancelled: 12, delivered: 369 },
+    { name: 'Sweet cheesy pizza for kids', pending: 9, cancelled: 12, delivered: 369 },
   ];
 
-
-  const popularDishes = []; 
-  
+  const popularDishes = [
+    { name: 'Sweet cheesy pizza for kids', orders: 29 },
+    { name: 'Sweet cheesy pizza for kids', orders: 29 },
+    { name: 'Sweet cheesy pizza for kids', orders: 29 },
+  ];
 
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen p-4"> 
       <Header />
-      <Grid container>
-        <Grid item xs={12} sm={3}>
+      <div className="flex">
+        <div className="w-1/4">
           <Sidebar />
-        </Grid>
-        <Grid item xs={12} sm={9}>
-          {/* Welcome Message and Subtext */}
+        </div>
+        <div className="w-3/4 p-4">
           <Typography variant="h5" gutterBottom>
             Welcome Andre Carvalli
           </Typography>
@@ -36,11 +40,18 @@ export default function Home() {
             Your daily dashboard report is here...
           </Typography>
 
-          {/* Dashboard Components */}
           <DashboardStats stats={stats} />
-          <OrderList orders={orders} />
-        </Grid>
-      </Grid>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white rounded-lg shadow p-6"> 
+              <OrderManagement orders={orders} />
+            </div>
+            <div className="bg-white rounded-lg shadow p-6"> 
+              <PopularDishes popularDishes={popularDishes} />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
