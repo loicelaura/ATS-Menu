@@ -4,6 +4,10 @@ import DashboardStats from './components/DashboardStats.jsx';
 import Typography from '@mui/material/Typography';
 import PopularDishes from './components/PopularDishes.jsx';
 import OrderManagement from './components/OrderManagement.jsx';
+import TodaysReservations from './components/TodaysReservations.jsx';
+import OutOfStock from './components/OutOfStock.jsx';
+import LeastOrderedItems from './components/LeastOrderedItems.jsx';
+import OrderChart from './components/OrderChart.jsx';
 
 export default function Home() {
   const stats = [
@@ -26,7 +30,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen p-4"> 
+    <div className="bg-gray-100 min-h-screen p-4">
       <Header />
       <div className="flex">
         <div className="w-1/4">
@@ -40,14 +44,24 @@ export default function Home() {
             Your daily dashboard report is here...
           </Typography>
 
-          <DashboardStats stats={stats} />
+          {/* Stats Section */}
+          <div className="grid grid-cols-4 gap-4 mb-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="bg-white rounded-lg shadow p-4 text-center">
+                <div className="text-2xl font-semibold">{stat.value}</div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white rounded-lg shadow p-6"> 
+          <div className="grid grid-cols-3 gap-4"> 
+            <div className="col-span-2">
               <OrderManagement orders={orders} />
+              <LeastOrderedItems />
             </div>
-            <div className="bg-white rounded-lg shadow p-6"> 
-              <PopularDishes popularDishes={popularDishes} />
+            <div className="col-span-1">
+              <TodaysReservations />
+              <OutOfStock />
             </div>
           </div>
         </div>

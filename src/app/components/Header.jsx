@@ -31,7 +31,7 @@ const Header = () => {
                         <NotificationsIcon />
                     </Badge>
                 </IconButton>
-                <Avatar alt="Andre Carvalli" src="/images/andre-photo.jpg" style={{ marginLeft: '16px' }} />
+                <Avatar alt="Andre Carvalli" src="/images/andre.jpg" style={{ marginLeft: '16px' }} />
             </Toolbar>
         </AppBar>
     );
