@@ -15,7 +15,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 const Sidebar = () => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '250px', backgroundColor: 'white', boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)' }}> {/* White background */}
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '250px', backgroundColor: 'white', boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)' }}>
             <div style={{ padding: '16px', borderBottom: '1px solid #eee' }}>
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                     <MenuIcon style={{ fontSize: '32px', color: '#11a9cc', marginRight: '10px' }} />
@@ -44,10 +44,10 @@ const Sidebar = () => {
                     <ListItemIcon style={{ color: '#555' }}><RestaurantMenuIcon /></ListItemIcon>
                     <ListItemText primary="Menu" style={{ fontSize: '14px' }} />
                 </ListItem>
-                <ListItem button="true" style={{ borderRadius: '4px', marginBottom: '5px' }}> {/* Corrected line */}
-            <ListItemIcon style={{ color: '#555' }}><TableChartIcon /></ListItemIcon>
-            <ListItemText primary="Tables" style={{ fontSize: '14px' }} />
-        </ListItem>
+                <ListItem button="true" style={{ borderRadius: '4px', marginBottom: '5px' }}>
+                    <ListItemIcon style={{ color: '#555' }}><TableChartIcon /></ListItemIcon>
+                    <ListItemText primary="Tables" style={{ fontSize: '14px' }} />
+                </ListItem>
                 <ListItem button="true" style={{ borderRadius: '4px', marginBottom: '5px' }}>
                     <ListItemIcon style={{ color: '#555' }}><LocalShippingIcon /></ListItemIcon>
                     <ListItemText primary="Delivery" style={{ fontSize: '14px' }} />

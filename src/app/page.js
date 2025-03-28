@@ -47,13 +47,15 @@ export default function Home() {
         <ThemeProviderWrapper>
             <div className="bg-gray-100 min-h-screen p-4">
                 <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center border rounded-full p-2 bg-white w-64">
-                        <SearchIcon className="mr-2" />
-                        <input
-                            type="text"
-                            placeholder="Search..."
-                            className="flex-grow outline-none"
-                        />
+                    <div className="flex justify-center flex-grow">
+                        <div className="flex items-center border rounded-full p-2 bg-white w-64">
+                            <SearchIcon className="mr-2" />
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                className="flex-grow outline-none"
+                            />
+                        </div>
                     </div>
                     <div className="flex items-center">
                         <button className="mr-4 p-2 rounded-full bg-gray-200">
@@ -66,18 +68,18 @@ export default function Home() {
                         />
                     </div>
                 </div>
-                <div className="flex">
+                <div className="flex" style={{ height: 'calc(100vh - 88px)' }}>
                     <div className="w-1/4">
                         <Sidebar />
                     </div>
-                    <div className="w-3/4 p-4">
+                    <div className="w-3/4 p-4 mt-8">
                         <Typography variant="h5" gutterBottom>
                             Welcome Andre Carvalli
                         </Typography>
                         <Typography variant="body1" gutterBottom>
                             Your daily dashboard report is here...
                         </Typography>
-
+    
                         <div className="grid grid-cols-4 gap-4 mb-8">
                             {stats.map((stat, index) => (
                                 <div key={index} className="bg-white rounded-lg shadow p-4 text-center">
@@ -86,7 +88,7 @@ export default function Home() {
                                 </div>
                             ))}
                         </div>
-
+    
                         <div className="grid grid-cols-2 gap-4">
                             <div className="col-span-1 space-y-4">
                                 <OrderManagement orders={orders} />
@@ -106,4 +108,4 @@ export default function Home() {
             </div>
         </ThemeProviderWrapper>
     );
-}
+    }
