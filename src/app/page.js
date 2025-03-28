@@ -1,5 +1,4 @@
 import Sidebar from './components/Sidebar.jsx';
-import Header from './components/Header.jsx';
 import Typography from '@mui/material/Typography';
 import TodaysReservations from './components/TodaysReservations.jsx';
 import OutOfStock from './components/OutOfStock.jsx';
@@ -7,8 +6,10 @@ import OrderChart from './components/OrderChart.jsx';
 import OrderManagement from './components/OrderManagement.jsx';
 import PopularDishes from './components/PopularDishes.jsx';
 import LeastOrderedItems from './components/LeastOrderedItems.jsx';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import ThemeProviderWrapper from './components/ThemeProviderWrapper.jsx';
+import SearchIcon from '@mui/icons-material/Search';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 const theme = createTheme({
     typography: {
@@ -43,9 +44,28 @@ export default function Home() {
     ];
 
     return (
-      <ThemeProviderWrapper>
+        <ThemeProviderWrapper>
             <div className="bg-gray-100 min-h-screen p-4">
-                <Header />
+                <div className="flex justify-between items-start mb-4">
+                    <div className="flex items-center border rounded-full p-2 bg-white w-64">
+                        <SearchIcon className="mr-2" />
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            className="flex-grow outline-none"
+                        />
+                    </div>
+                    <div className="flex items-center">
+                        <button className="mr-4 p-2 rounded-full bg-gray-200">
+                            <NotificationsIcon />
+                        </button>
+                        <img
+                            src="images/andre.jpg"
+                            alt="Andre Carvalli"
+                            className="w-10 h-10 rounded-full"
+                        />
+                    </div>
+                </div>
                 <div className="flex">
                     <div className="w-1/4">
                         <Sidebar />
@@ -84,6 +104,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-         </ThemeProviderWrapper>
+        </ThemeProviderWrapper>
     );
 }
